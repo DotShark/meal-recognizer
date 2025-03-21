@@ -17,7 +17,7 @@ async function init() {
   maxPredictions.value = model.value.getTotalClasses()
 
   webcam.value = new tmImage.Webcam(webcamContainerSize.width.value, webcamContainerSize.height.value, true)
-  await webcam.value.setup()
+  await webcam.value.setup({ facingMode: 'environment' })
   await webcam.value.play()
 
   if (webcamContainer.value) {
