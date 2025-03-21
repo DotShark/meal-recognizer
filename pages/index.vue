@@ -2,7 +2,7 @@
 import * as tf from '@tensorflow/tfjs'
 import * as tmImage from '@teachablemachine/image'
 
-const modelUrl = 'https://teachablemachine.withgoogle.com/models/h-pddGnu2'
+const modelUrl = 'https://teachablemachine.withgoogle.com/models/QEArvfi45/'
 
 const labels = ref<string[]>([])
 const model = shallowRef<tmImage.CustomMobileNet>()
