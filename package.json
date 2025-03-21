@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/fonts": "^0.11.0",
+    "@nuxt/icon": "^1.11.0",
     "@nuxtjs/tailwindcss": "^6.13.2",
     "@teachablemachine/image": "^0.8.5",
     "@vueuse/core": "^13.0.0",

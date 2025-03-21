@@ -59,13 +59,14 @@ onMounted(async () => {
 
 <template>
   <ClientOnly>
-    <div class="flex flex-col items-center justify-center gap-4 py-6 sm:px-32 md:px-48 lg:px-64 xl:px-96 2xl:px-128">
-      <h1 class="text-2xl font-bold">Meal Recognizer</h1>
-      <div ref="webcamContainer" class="w-full aspect-square bg-gray-700">
+    <div class="w-full h-dvh flex flex-col items-center justify-center gap-4 p-6 overflow-hidden bg-gradient-to-b from-cyan-900/20 to-blue-900/20">
+      <h1 class="text-3xl font-bold font-poppins">Meal Recognizer</h1>
+      <div ref="webcamContainer" class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 aspect-square rounded-2xl bg-gray-700 overflow-hidden">
       </div>
-      <div v-if="labels.length" class="text-lg">
-        <p v-if="labels[0].startsWith('not_food')">Aucun plat n'a été détecté</p>
-        <p v-else>Plat détecté : {{ labels[0] }}</p>
+      <div v-if="labels.length" class="text-lg bg-gray-700 px-3 py-2 rounded-lg flex flex-row items-center justify-center gap-2">
+        <Icon name="heroicons:information-circle" />
+        <p class="font-inter" v-if="labels[0].startsWith('not_food')">Aucun plat n'a été détecté</p>
+        <p class="font-inter" v-else>Plat détecté : {{ labels[0] }}</p>
       </div>
     </div>
   </ClientOnly>

@@ -5,6 +5,10 @@ export default {
     extend: {
       spacing: {
         '128': '32rem'
+      },
+      fontFamily: {
+        inter: ['Inter'],
+        poppins: ['Poppins']
       }
     },
   },
