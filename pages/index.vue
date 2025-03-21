@@ -37,7 +37,7 @@ async function predict() {
   const prediction = await model.value!.predict(webcam.value!.canvas)
   labels.value = prediction
     .sort((p1, p2) => p2.probability - p1.probability)
-    .map(p => `${p.className} (${Math.floor(p.probability * 100)}% de certitude)`)
+    .map(p => `${translateMealName(p.className)} (${Math.floor(p.probability * 100)}% de certitude)`)
 }
 
 onMounted(async () => {
@@ -60,7 +60,7 @@ onMounted(async () => {
 <template>
   <ClientOnly>
     <div class="w-full h-dvh flex flex-col items-center justify-center gap-4 p-6 overflow-hidden bg-gradient-to-b from-cyan-900/20 to-blue-900/20">
-      <h1 class="text-3xl font-bold font-poppins">Meal Recognizer</h1>
+      <h1 class="text-3xl font-bold font-poppins">Quel est ce plat ?</h1>
       <div ref="webcamContainer" class="w-full sm:w-3/4 md:w-2/3 lg:w-1/2 xl:w-2/5 aspect-square rounded-2xl bg-gray-700 overflow-hidden">
       </div>
       <div v-if="labels.length" class="text-lg bg-gray-700 px-3 py-2 rounded-lg flex flex-row items-center justify-center gap-2">
