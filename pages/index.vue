@@ -13,8 +13,6 @@ const webcamContainer = useTemplateRef('webcamContainer')
 const webcamContainerSize = useElementSize(webcamContainer)
 
 async function init() {
-  console.log('caca')
-
   model.value = await tmImage.load(`${modelUrl}/model.json`, `${modelUrl}/metadata.json`)
   maxPredictions.value = model.value.getTotalClasses()
 
