@@ -16,7 +16,7 @@ async function init() {
   model.value = await tmImage.load(`${modelUrl}/model.json`, `${modelUrl}/metadata.json`)
   maxPredictions.value = model.value.getTotalClasses()
 
-  webcam.value = new tmImage.Webcam(webcamContainerSize.width.value, webcamContainerSize.height.value, true)
+  webcam.value = new tmImage.Webcam(webcamContainerSize.width.value, webcamContainerSize.height.value, false)
   await webcam.value.setup({ facingMode: 'environment' })
   await webcam.value.play()
 
