@@ -1,0 +1,15 @@
+services:
+  front:
+    build: ./
+    container_name: meal-recognizer
+    ports:
+      - "3200:3000"
+    environment:
+      NODE_ENV: production
+    networks:
+      - some-stuff
+    restart: always
+
+networks:
+  some-stuff:
+    driver: bridge
